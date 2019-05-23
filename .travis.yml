@@ -2,8 +2,9 @@ sudo: true
 os: trusty
 cache: false
 before_install:
+- echo $PATH
 - openssl aes-256-cbc -K $encrypted_b63b2c2d2eb3_key -iv $encrypted_b63b2c2d2eb3_iv
-  -in assets/server.key.enc -out assets/server.key -d
+  -in ./assets/server.key.enc -out ./assets/server.key -d
 - export PATH=./job/$(pwd):$PATH
 script:
 - script: ant deployUnpackaged
