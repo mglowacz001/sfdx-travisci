@@ -2,9 +2,11 @@ sudo: true
 os: trusty
 cache: false
 before_install:
-- echo $PATH
-- openssl aes-256-cbc -K $encrypted_b63b2c2d2eb3_key -iv $encrypted_b63b2c2d2eb3_iv
-  -in ./assets/server.key.enc -out ./assets/server.key -d
+- echo $super_secret_password | gpg --passphrase-fd 0 secret.txt.gpg
+- openssl aes-256-cbc -k "$super_secret_password" -in secret.txt.enc -out secret.txt -d
 - export PATH=./job/$(pwd):$PATH
 script:
 - script: ant deployUnpackaged
+env:
+  global:
+    secure: EmTxFtg/ksDQ2afV3UxJ0i5BmtAPyEKdov69QUkobA0AUIwzg814mUhEmQ5SZI35ZfxNVTvNead9mUrm6tvDj2QtbJ464H7pjYGHMFqGNG/By3WCmIKzt7rhbUUqgANf9fJHl3YIMNk+lqA1zNiqdq4HL548nzwk5gAMs2vYKWLlx+gaZ05OTAjdOrtlDZZKDLbmJTnjCrwOWj0ChyiTk4v5vpc4SsE94XNU12BAbomS2q2maFzOuS/VuE2o7AXNwZ4U7ItuXw+iXF97EfjneaLyW38S3JDNM8DrMcPcB9R3Dz71kLYm+5SdN3cd/Cvc3E+PJ58XoNz+tRpIqNkV1EUoFZzJJcmrY5f+R3MCd+QM1pgyXiC4agiVzqe+4Ytcjw2B5WPJPX0P4PPbMR/WV2Ny1bkuSPvPrCy2DcBl4w64YERtEQQapvq0O1Mfik8kQHVG4Rcvv41oxjzvZ+drYf6RmDRE1RSLhvlQX1u7+B2oG9kXurS3W40RjeK+mRNIPxmaoksA09Wysp6/6KOWEwqvzq9rFz0qZT34DTZfDxj9rgjQwjtnO7hIGD3ZSFF7I4pos2z2hCdnzRkTDm5orBgtxojSmTQnKL/EF8aMZHFzilGFqGZmmToBXfD7oj/MmlcGIJ3n0wx2ngWtcqTrM9JdBFt5UvBDD2gdN+AGAGQ=
