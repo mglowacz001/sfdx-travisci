@@ -4,6 +4,9 @@ cache: false
 before_install:
 - cd job
 - export PATH=./job/$(pwd):$PATH
+- $echo SUSERNAME
+- $echo $SUSERNAME
+- $echo ${SUSERNAME}
 script:
 - ant deployUnpackaged
 env:
