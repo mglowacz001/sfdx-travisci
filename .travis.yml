@@ -5,6 +5,7 @@ before_install:
 - echo PATH
 - export PATH=./job/$(pwd):$PATH
 - echo $PATH
+- echo $PWD
 script:
 - ant deployUnpackaged
 env:
