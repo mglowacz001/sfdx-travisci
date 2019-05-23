@@ -2,7 +2,9 @@ sudo: true
 os: trusty
 cache: false
 before_install:
+- echo PATH
 - export PATH=./job/$(pwd):$PATH
+- echo $PATH
 script:
 - ant deployUnpackaged
 env:
