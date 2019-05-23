@@ -3,7 +3,7 @@ os: trusty
 cache: false
 before_install:
 - echo $super_secret_password | gpg --passphrase-fd 0 secret.txt.gpg
-- openssl aes-256-cbc -k "$super_secret_password" -in secret.txt.enc -out secret.txt -d
+- openssl aes-256-cbc -k "$super_secret_password" -in ./secret.txt.enc -out secret.txt -d
 - export PATH=./job/$(pwd):$PATH
 script:
 - script: ant deployUnpackaged
