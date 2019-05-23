@@ -4,7 +4,7 @@ cache: false
 before_install:
 - export PATH=./job/$(pwd):$PATH
 script:
-- script: ant deployUnpackaged
+- ant deployUnpackaged
 env:
   global:
     secure: WnnZfwIhWRbr38TlB2wCfRXqLFp6LIzCl7UuY1g6znTVeVzfKhg4dNwGLyN9Nu9alZTmNS1PR/GA9HloT1Dstv+BMgyojy/qIQJRpRZxNJQPBUdyO9dg1i9mZBbiwpp4G9vJHf6ZHMOHktkgnMWS2Zg07RBNqNtN5CiYrYrWJ4POmS7+F9UP4mZM/5zq6G0qj0WE9O7pumRK0S3u5XU0B2SGnA8NRdJ8MXb6q0kG1oI9FavA1/xOgbM9amSQkLQwT62REt6rm9QrkARDfbCohSOkZiDOh/WT/Rs01RAtmC+RmRtavi8O7qfISI4kffSiUTftqrzIyfqOtiGD2SCY4YfUE0iy0YVE7BaveAP1EmQ2j0a4hz7xUw3bGkH6pYIB21WJN01YQGbI9k+iSNkn5Gp/CxY/FD6XvB15ZUaRqan65eJkXj91c5DNf8LItN40Xa8j1hmY8IU1W1TeY7Lm1OIVGkhmIogbS9zwpQt6iEU+86a/VjRGlcrLfq5q/krAGMUQkrWkGaE8Kj0O+4kmUSdtXBrdt0/YH7KSZjCIIUXFey0mLDS406ILcZsxeLxiItqIiYCXjQjW3kQNFF/P1120TzO0QEb2nZIEoCMXPn/lcqmKX6y1SE/7N/sjXh3ilybsJtFOf/1W7JdB1rRnSRLB7uidiBhLYdGO7UFab/8=
