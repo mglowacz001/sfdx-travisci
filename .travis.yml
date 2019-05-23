@@ -2,7 +2,7 @@ sudo: true
 os: trusty
 cache: false
 before_install:
-- echo PATH
+- cd job
 - export PATH=./job/$(pwd):$PATH
 - echo $PATH
 - echo $PWD
